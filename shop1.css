@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    /* margin: 0;
+    padding: 0; */
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* mengset warna supaya tidak ribet setiap bagian yang mau dikasih warna tinggal panggil fungsi "var(fungsi);" */
+:root {
+    --main-color: #fd4646;
+    --text-color: #171427;
+
+
+    
+    --bg-color: #fff;
+}
+
+/* gede kecil gambarnya
+img{
+    width: 100%;
+    height: 70%;
+} */
+
+body{
+    color: var(--text-color);
+}
+
+/* meliputi isi tulisan (kiri ke kanan: toko ular phyton sampe logo cart -- atas ke bawah: tulisan ular phyton sampe cart2nya) */
+.container{
+    max-width: 1600px;
+    margin: auto;
+    width: 100%;
+}
+
+/* meliputi isi tulisan (kiri ke kanan: foro uler ijo sampe puti -- atas ke bawah: garis line harga cart) -- padding ada 3 yang pertama jarak atas kedua gtw ketiga jarak bawah */ 
+section{
+    padding: 4rem 0 3rem;
+}
+
+/* box-shadow buat garis tipis dibwah tulisan toko ular phyton -- gunanya top supaya kalau di scroll bagian atasnya tidak ikut berpindah karna position fixed */
+header{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left : 0;
+    width: 100%;
+    background: var(--bg-color);
+    background-color: white;
+    height: 60px;
+    box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
+}
+header img{
+    margin-bottom: 10px;
+    width: 120px;
+    height: 55px;
+    float: left;
+    /* transform: translateX(15%); */
+    transform: translate(15%, -35%);
+}
+
+/* space-between misahin tulisan ama logo cart -- padding atas bawah */
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.logo{
+    font-size: 1rem;
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+/* logo tas belanjaan, pointer: kalo kursor kita di arahin kesana jadi berbeda, rem itu mirip kayak pixel untuk gede kecil */
+#cart-icon{
+    font-size: 1.8rem;
+    margin-top: 45px;
+    margin-right: 5px;
+    cursor: pointer;
+    color: black;
+    /* padding-right: 10px; */
+    transform: translate(-35%, -165%);
+    
+}
+
+/* posisi tulisan shop product */
+.section-title{
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+    /* margin-bottom: 1.5rem; */
+}
+
+/* kasih jarak dari bagian header ke tulisan shop product */
+.shop {
+    margin-top: 1rem;
+}
+
+/* Shop Content grid template colums buat konten nya jadi berjejer kekanan -- grid buat jarak antara perkotak dengan kotak lain lainnya */
+.shop-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    gap: 1.5rem;
+}
+
+.product-box{
+    position: relative; 
+    margin: 20px;
+    width: 300px; /* Sesuaikan lebar sesuai kebutuhan Anda */
+}
+
+/* kasih animasi pas cursor ke arah cart */
+.product-box:hover{
+    padding: 10px;
+    border: 3px solid var(--text-color);
+    transition: 0.4s;
+}
+
+/* gede kecil gambar buku */
+.product-img{
+    width: 100%;
+    height: 70%;
+    margin-bottom: -1rem;
+    z-index: 0;
+}
+
+/* tulisan nama buku */
+.product-title{
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* tulisan harga */
+.price{
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+.download-icon {
+    background: var(--text-color);
+    color: var(--bg-color);
+    padding: 10px;
+    cursor: pointer;
+}
+
+.product-box .download-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+
+
+.add-cart{
+    background: var(--text-color);
+    color: var(--bg-color);
+    padding: 10px;
+    cursor: pointer;
+}
+.product-box .add-cart {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.cart{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:360px;
+    min-height: 100vh;
+    height: 80%;
+    padding: 20px;
+    background: var(--bg-color);
+    box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+    transition: 0.3s;
+    overflow: auto;
+}
+.cart-title{
+    text-align:center;
+    font-size: 30px;
+}
+.cart-box{
+    display:grid;
+    grid-template-columns: 32% 50% 18%;
+    align-items: center;
+    gap:1rem;
+}
+.cart-img{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    padding:10px;
+}
+.detail-box{
+    display:grid;
+    row-gap: 0.5rem;
+}
+.cart-product-title{
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-top: -70px;
+}
+.cart-price{
+    font-weight:500 ;
+    margin-top: -30px;
+}
+.cart-quantity{
+    border:1px solid var(--text-color);
+    outline-color: var(--main-color);
+    width: 2.4rem;
+    text-align: center;
+}
+.cart-remove{
+    font-size:24px;
+    color:var(--main-color);
+    cursor: pointer;
+    margin-top: -30px;
+}
+.total{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    border-top:1px solid var(--text-color);
+}
+.total-title{
+    font-size:1rem;
+    font-weight: 600;
+}
+.total-price{
+    margin-left: 0.5rem;
+}
+.btn-buy{
+    display:flex;
+    margin: 1.5rem auto 0 auto;
+    padding:12px;
+    border:none;
+    background: black;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor:pointer;
+    color:var(--bg-color);
+}
+.btn-buy:hover{
+    background:rgb(121, 121, 121);
+    color: black;
+}
+#close-cart{
+    position:absolute;
+    top:1rem;
+    right:0.8rem;
+    font-size: 2rem;
+    color:var(--text-color) ;
+    cursor: pointer;
+}
+.cart.active {
+    right: 0;
+}
+
+/* tambahan */
+/* .popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Warna latar belakang transparan */
+    /* justify-content: center;
+    align-items: center;
+} */
+
+/* .popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 400px;
+    text-align: center;
+    z-index: 1000;
+} */
+
+/* Style untuk tombol close */
+/* .close-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+} */ 

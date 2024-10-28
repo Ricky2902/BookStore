@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"montserrat";
+}
+header{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left : 0;
+    width: 100%;
+    background: var(--bg-color);
+    background-color: white;
+    height: 60px;
+    box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
+}
+header img{
+    margin-bottom: 10px;
+    width: 120px;
+    height: 55px;
+    float: left;
+    transform: translate(15%, -25%);
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.container{
+    max-width: 1600px;
+    margin: auto;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(images/bg.jpeg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin: 0; /* Menghapus margin jika tidak diperlukan */
+    padding: 30px; /* Menggunakan padding lebih dari 20px */
+}
+
+.box {
+    position: relative;
+    width: 380px;
+    height: 450px;
+    background: rgba(255, 255, 255, 0.2); /* RGBA dengan tingkat transparansi 0.8 */
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.2px);
+    overflow: hidden;
+    margin-bottom: -80px; /* Atur nilai margin-bottom sesuai kebutuhan */
+}
+
+
+.form {
+    position: absolute;
+    inset: 2px;
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.form h2 {
+    color: #d2b356;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+.inputBox {
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+}
+.inputBox input {
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #000000;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    z-index: 20;
+}
+.inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 20px 0px 10px;
+    font-size: 1em;
+    color: #8f8f8f;
+    pointer-events: none;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span 
+{
+    color: #d2b356;
+    transform: translateX(0px) translateY(-34px);
+    font-size: 0.75em;
+}
+.inputBox i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #FAF7F0;
+    border-radius: 4px;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 9;
+}
+.inputBox input:valid ~ i,
+.inputBox input:focus ~ i 
+{
+    height: 44px;
+}
+.links {
+    display: flex;
+    justify-content: space-between;
+}
+.links a {
+    margin: 10px 0px;
+    font-size: 0.75em;
+    color: #8f8f8f8f;
+    text-decoration: none;
+}
+.links a:hover,
+.links a:nth-child(2)
+{
+    color: #45f3ff;
+}
+input[type="submit"]
+{
+    border: none;
+    outline: none;
+    background: #d2b356;
+    padding: 11px 25px;
+    width: 100px;
+    margin-top: 30px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 100px;
+}
+

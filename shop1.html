@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SHOP</title>
+    <!-- Link to css -->
+    <link rel="stylesheet" href="shop1.css">
+    <!-- Box Icon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Nav -->
+        <div class="nav container">
+            <a href="index.html"><img src="images/logonguaa.png"></a>
+            <!-- Cart Icon -->
+            <i class='bx bx-shopping-bag' id="cart-icon"></i>
+            <div class="cart">
+                <h2 class="cart-title">Cart</h2>
+
+                <div class="cart-content">
+                </div>
+
+                <div class="total">
+
+                </div>
+                <button type="button" class="btn-buy">Download Now</button>
+                <i class="bx bx-x" id="close-cart"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Shop -->
+    <section class="shop container">
+        <h2 class="section-title">Shop Products</h2>
+        <!-- Content -->
+        <div class="shop-content">
+            <!-- Box 1 -->
+            <div class="product-box" onclick="showPopup()">
+                <img src="images/gaMBar buku/buku1.jpg" alt="" class="product-img">
+                <h2 class="product-title">Little Women</h2>
+                <span class="price">25 MB</span>
+                <i class="bx bx-download download-icon"></i>
+            </div>
+            <div class="product-box">
+                <img src="images/gaMBar buku/buku2.jpg" alt="" class="product-img">
+                <h2 class="product-title">A Study Drowning</h2>
+                <span class="price">100 MB</span>
+                <i class="bx bx-download download-icon"></i>
+            </div>
+            <!-- Box 3 -->
+            <div class="product-box">
+                <img src="images/gaMBar buku/buku3.jpg" alt="" class="product-img">
+                <h2 class="product-title">Lost Boy</h2>
+                <span class="price">15 MB</span>
+                <i class="bx bx-download download-icon"></i>
+            </div>
+            <!-- Box 4 -->
+            <div class="product-box">
+                <img src="images/gaMBar buku/buku4.jpg" alt="" class="product-img">
+                <h2 class="product-title">Over The Sirens</h2>
+                <span class="price">25 MB</span>
+                <i class="bx bx-download download-icon"></i>
+            </div>
+            <!-- Box 5 -->
+            <div class="product-box">
+                <img src="images/gaMBar buku/buku5.jpg" alt="" class="product-img">
+                <h2 class="product-title">Lost in The Never Woods</h2>
+                <span class="price">250 MB</span>
+                <i class="bx bx-download download-icon"></i>
+            </div>
+            <!-- Box 6 -->
+            <div class="product-box">
+                <img src="images/gaMBar buku/buku6.jpg" alt="" class="product-img">
+                <h2 class="product-title">Black Door</h2>
+                <span class="price">125 MB</span>
+                <i class="bx bx-download download-icon"></i>
+            </div>
+            <!-- Box 7 -->
+            <div class="product-box">
+                <img src="images/gaMBar buku/buku7.jpg" alt="" class="product-img">
+                <h2 class="product-title">Nobody Knows But You</h2>
+                <span class="price">70 MB</span>
+                <i class="bx bx-download download-icon"></i>
+            </div>
+            <!-- Box 8 -->
+            <div class="product-box">
+                <img src="images/gaMBar buku/buku8.jpg" alt="" class="product-img">
+                <h2 class="product-title">Of White And Shady</h2>
+                <span class="price">45 MB</span>
+                <i class="bx bx-download download-icon"></i>
+            </div>
+            <!-- Box 9 -->
+            <div class="product-box">
+                <img src="images/gaMBar buku/buku9.jpg" alt="" class="product-img">
+                <h2 class="product-title">The Legend of Skeleton Man</h2>
+                <span class="price">45 MB</span>
+                <i class="bx bx-download download-icon"></i>
+            </div>
+            <!-- Box 10 -->
+            <div class="product-box">
+                <img src="images/gaMBar buku/buku10.jpg" alt="" class="product-img">
+                <h2 class="product-title">The Gravity of Us</h2>
+                <span class="price">50 MB</span>
+                <i class="bx bx-download download-icon"></i>
+            </div>
+             <!-- Box 11 -->
+             <div class="product-box">
+                <img src="images/gaMBar buku/buku11.jpg" alt="" class="product-img">
+                <h2 class="product-title">Nightbooks</h2>
+                <span class="price">50 MB</span>
+                <i class="bx bx-download download-icon"></i>
+            </div>
+             <!-- Box 12 -->
+             <div class="product-box">
+                <img src="images/gaMBar buku/buku12.jpg" alt="" class="product-img">
+                <h2 class="product-title">Lightfall</h2>
+                <span class="price">50 MB</span>
+                <i class="bx bx-download download-icon"></i>
+            </div>
+             <!-- Box 13 -->
+             <div class="product-box">
+                <img src="images/gaMBar buku/buku13.jpg" alt="" class="product-img">
+                <h2 class="product-title">The Crimes of Steamfield</h2>
+                <span class="price">50 MB</span>
+                <i class="bx bx-download download-icon"></i>
+            </div>
+             <!-- Box 14 -->
+             <div class="product-box">
+                <img src="images/gaMBar buku/buku14.jpg" alt="" class="product-img">
+                <h2 class="product-title">Not Here To Be Liked</h2>
+                <span class="price">50 MB</span>
+                <i class="bx bx-download download-icon"></i>
+            </div>
+             <!-- Box 15 -->
+             <div class="product-box">
+                <img src="images/gaMBar buku/buku15.jpg" alt="" class="product-img">
+                <h2 class="product-title">The Name Of The Wind</h2>
+                <span class="price">50 MB</span>
+                <i class="bx bx-download download-icon"></i>
+            </div>
+            <!-- Box 16 -->
+            <div class="product-box">
+                <img src="images/gaMBar buku/buku16.jpg" alt="" class="product-img">
+                <h2 class="product-title">The Fourth Island</h2>
+                <span class="price">70 MB</span>
+                <i class="bx bx-download download-icon"></i>
+            </div>
+            <!-- Box 17-->
+            <div class="product-box">
+                <img src="images/gaMBar buku/buku17.jpg" alt="" class="product-img">
+                <h2 class="product-title">NverMore</h2>
+                <span class="price">70 MB</span>
+                <i class="bx bx-download download-icon"></i>
+            </div>
+            <!-- Box 18-->
+            <div class="product-box">
+                <img src="images/gaMBar buku/buku18.jpg" alt="" class="product-img">
+                <h2 class="product-title">The Miraculous</h2>
+                <span class="price">70 MB</span>
+                <i class="bx bx-download download-icon"></i>
+            </div>
+            <!-- Box 19-->
+            <div class="product-box">
+                <img src="images/gaMBar buku/buku19.jpg" alt="" class="product-img">
+                <h2 class="product-title">I'M The King of The Castle</h2>
+                <span class="price">70 MB</span>
+                <i class="bx bx-download download-icon"></i>
+            </div>
+            <!-- Box 20-->
+            <div class="product-box">
+                <img src="images/gaMBar buku/buku20.jpg" alt="" class="product-img">
+                <h2 class="product-title">Ghost Girl</h2>
+                <span class="price">70 MB</span>
+                <i class="bx bx-download download-icon"></i>
+            </div>
+            <!-- Box 21-->
+            <div class="product-box">
+                <img src="images/gaMBar buku/buku21.jpg" alt="" class="product-img">
+                <h2 class="product-title">Before We Disappear</h2>
+                <span class="price">70 MB</span>
+                <i class="bx bx-download download-icon"></i>
+            </div>
+            <!-- Box 22-->
+            <div class="product-box">
+                <img src="images/gaMBar buku/buku22.jpg" alt="" class="product-img">
+                <h2 class="product-title">The Darkening</h2>
+                <span class="price">70 MB</span>
+                <i class="bx bx-download download-icon"></i>
+            </div>
+            <!-- Box 23-->
+            <div class="product-box">
+                <img src="images/gaMBar buku/buku23.jpg" alt="" class="product-img">
+                <h2 class="product-title">The Adventures of Sherlock Holmes</h2>
+                <span class="price">70 MB</span>
+                <i class="bx bx-download download-icon"></i>
+            </div>
+            <!-- Box 24-->
+            <div class="product-box">
+                <img src="images/gaMBar buku/buku24.jpg" alt="" class="product-img">
+                <h2 class="product-title">Black Hearts</h2>
+                <span class="price">70 MB</span>
+                <i class="bx bx-download download-icon"></i>
+            </div>
+            <!-- Box 25-->
+            <div class="product-box">
+                <img src="images/gaMBar buku/buku25.jpg" alt="" class="product-img">
+                <h2 class="product-title">The Antidote</h2>
+                <span class="price">70 MB</span>
+                <i class="bx bx-download download-icon"></i>
+            </div>
+    </section>
+    <script src="main1.js"></script>
+</body>
+</html>

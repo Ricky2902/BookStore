@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="loginsty.css">
+  <title>Login</title>
+</head>
+<body>
+
+  <header>
+    <!-- Nav -->
+    <div class="nav container1">
+        <a href="index.html"><img src="../../images/logonguaa.png"></a>
+    </div>
+</header>
+
+
+<div class="container">
+    <h2><b>Subscription</b></h2>
+  <form id="loginForm">
+    <label for="email">Email</label>
+    <input type="email" id="email" required>
+
+    <label for="username">Username</label>
+    <input type="text" id="username" pattern="[a-z]+" required>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" required>
+
+    <label for="userType">Choose Package:</label>
+    <select id="userType" onchange="updatePaymentDetails()">
+      <option value="biasa">Personal</option>
+      <option value="student">Student</option>
+      <option value="premium">Business</option>
+    </select>
+
+    <div id="priceDetails" style="display:none;">
+      <p id="totalPrice">Total: $0.00</p>
+    </div>
+
+    <div class="syarat-container">
+      <button type="button" onclick="openTermsModal()">Privacy Policy</button>
+      <div class="check">
+          <input type="checkbox" id="agreeTerms">
+      </div>
+  </div>
+
+    <button type="button1" onclick="register()">Register</button>
+
+  </form>
+</div>
+
+<div id="termsModal">
+    <div id="termsContent">
+      <span onclick="closeTermsModal()" style="float:right;">&times;</span>
+      <h3>Syarat dan Ketentuan Pembelian Buku di Ebook Store</h3>
+      <ol>
+        <li>Buyers must read the book details carefully before making a purchase.</li>
+        <li>Payment can be made via bank transfer, or digital application.</li>
+        <li>Book prices may change without prior notice.</li>
+        <li>After successful payment, the book will be available in digital format for download.</li>
+        <li>Book purchases are non-refundable (cannot be returned).</li>
+        <li>Please keep proof of payment as a reference for claims if necessary.</li>
+        <li>Ebook Store reserves the right to cancel orders if technical or other policy errors occur.</li>
+      </ol>
+      <button type="button" onclick="closeTermsModal()">Tutup</button>
+    </div>
+  </div>
+
+<div id="paymentModal">
+    <div id="paymentContent">
+      <span onclick="closePaymentModal()" style="float:right;">&times;</span>
+      <p>Payment Method :</p>
+      <select id="paymentMethod" onchange="selectPaymentMethod()">
+        <option value="transferBank">Bank Transfer</option>
+        <option value="digitalApp">Digital Money</option>
+      </select>
+  
+      <div id="bankOptions" style="display:none;">
+        <label for="bankSelection">Pilih Bank:</label>
+        <select id="bankSelection">
+          <option value="BCA">BCA</option>
+          <option value="Mandiri">Mandiri</option>
+          <option value="BRI">BRI</option>
+          <option value="BNI">BNI</option>
+          <option value="Permata">Permata</option>
+          <option value="BTN">BTN</option>
+        </select>
+        <div id="transactionDetails1" style="display:none;">
+          <label for="transactionCode1">Kode Transaksi:</label>
+          <span id="transactionCodeContainer1"></span>
+        </div>
+      </div>
+  
+      <div id="digitalOptions" style="display:none;">
+        <label for="digitalSelection">Pilih Aplikasi Digital:</label>
+        <select id="digitalSelection">
+          <option value="OVO">OVO</option>
+          <option value="GOPAY">GOPAY</option>
+          <option value="Shopeepay">SHOPEEPAY</option>
+          <option value="DANA">DANA</option>
+        </select>
+        <div id="transactionDetails" style="display:none;">
+          <label for="transactionCode">Kode Transaksi:</label>
+          <span id="transactionCodeContainer"></span>
+        </div>
+      </div>
+      <button type="button2" onclick="pay()">PAY</button>
+    </div>
+  </div>
+
+<script>
+function updatePaymentDetails() {
+    var userType = document.getElementById("userType").value;
+    var totalPrice = 0;  // Set your default total price
+
+    // Update total price based on the selected user type
+    if (userType === "biasa") {
+        totalPrice = 5.00;
+    } else if (userType === "student") {
+        totalPrice = 10.00;
+    } else if (userType === "premium") {
+        totalPrice = 15.00;
+    }
+
+    // Display the updated total price
+    document.getElementById("totalPrice").innerText = "Total: $" + totalPrice.toFixed(2);
+
+    // Show the price details section
+    document.getElementById("priceDetails").style.display = "block";
+}
+  
+  function openTermsModal() {
+    document.getElementById("termsModal").style.display = "block";
+  }
+
+  function closeTermsModal() {
+    document.getElementById("termsModal").style.display = "none";
+  }
+
+  function register() {
+    if (document.getElementById("agreeTerms").checked) {
+      document.getElementById("paymentModal").style.display = "block";
+    } else {
+      alert("Anda harus menyetujui syarat dan ketentuan untuk melakukan registrasi.");
+    }
+  }
+
+  function closePaymentModal() {
+    document.getElementById("paymentModal").style.display = "none";
+  }
+
+
+  function pay() {
+    var userType = document.getElementById("userType").value;
+
+    if (document.getElementById("agreeTerms").checked) {
+      document.getElementById("paymentModal").style.display = "block";
+
+      // Check if userType is "biasa" and redirect to project1.html
+      if (userType === "biasa") {
+        window.location.href = '../project\ 1/index.html';
+      }
+      if (userType === "student") {
+        window.location.href = '../project\ 2/student.html';
+      }
+      if (userType === "premium") {
+        window.location.href = '../project\ 3/premiumclass.html';
+      }
+    } else {
+      alert("Anda harus menyetujui syarat dan ketentuan untuk melakukan registrasi.");
+    }
+  }
+
+  
+
+
+
+  document.getElementById("paymentMethod").addEventListener("change", function () {
+    var selectedMethod = this.value;
+    var bankOptions = document.getElementById("bankOptions");
+    var digitalOptions = document.getElementById("digitalOptions");
+
+    if (selectedMethod === "transferBank") {
+        bankOptions.style.display = "block";
+        digitalOptions.style.display = "none";
+    } else if (selectedMethod === "digitalApp") {
+        bankOptions.style.display = "none";
+        digitalOptions.style.display = "block";
+    } else {
+        bankOptions.style.display = "none";
+        digitalOptions.style.display = "none";
+    }
+});
+
+document.getElementById("digitalOptions").addEventListener("change", function () {
+    var selectedDigitalApp = document.getElementById("digitalSelection").value;
+    var transactionDetails = document.getElementById("transactionDetails");
+
+    // Mendefinisikan kode transaksi untuk setiap aplikasi digital
+    var transactionCodes = {
+        "OVO": "14045087885555995", // Ganti dengan kode transaksi OVO yang sesuai
+        "GOPAY": "14022087885555995",
+        "Shopeepay": "150060087885555995",
+        "DANA": "15672087885555995"
+    };
+
+    // Menampilkan kode transaksi jika aplikasi digital terpilih
+    if (transactionCodes.hasOwnProperty(selectedDigitalApp)) {
+        var transactionCode = transactionCodes[selectedDigitalApp];
+        document.getElementById("transactionCodeContainer").innerText = transactionCode;
+        transactionDetails.style.display = "block";
+    } else {
+        transactionDetails.style.display = "none";
+    }
+});
+
+document.getElementById("bankOptions").addEventListener("change", function () {
+  var selectedBank = document.getElementById("bankSelection").value;
+  var transactionDetails1 = document.getElementById("transactionDetails1");
+
+  // Mendefinisikan kode transaksi untuk setiap bank
+  var transactionCodes1 = {
+    "BCA": "123456",
+    "Mandiri": "789012",
+    "BRI": "345678",
+    "BNI": "901234",
+    "Permata": "567890",
+    "BTN": "234567"
+  };
+
+  // Menampilkan atau menyembunyikan detail transaksi berdasarkan bank terpilih
+  if (transactionCodes1.hasOwnProperty(selectedBank)) {
+    var transactionCode1 = transactionCodes1[selectedBank];
+    document.getElementById("transactionCodeContainer1").innerText = transactionCode1;
+    transactionDetails1.style.display = "block";
+  } else {
+    transactionDetails1.style.display = "none";
+  }
+});
+</script>
+
+</body>
+</html>

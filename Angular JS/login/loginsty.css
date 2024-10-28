@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+  }
+
+  header{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left : 0;
+    width: 100%;
+    background: var(--bg-color);
+    background-color: white;
+    height: 60px;
+    box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
+}
+header img{
+    margin-bottom: 10px;
+    width: 120px;
+    height: 55px;
+    float: left;
+    transform: translate(15%, -25%);
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.container1{
+    max-width: 1600px;
+    margin: auto;
+    width: 100%;
+}
+  
+  .container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 80px auto;
+    padding: 20px;
+    width: 300px; /* Ubah nilai lebar sesuai keinginan Anda */
+  }
+  
+  .container h2{
+  text-align: center;
+  color: #d2b356;
+  }
+
+
+  h2 {
+    color: #333;
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-top: 10px;
+    color: #555;
+  }
+  
+  input,
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #d2b356;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #d2b356;
+  }
+  
+  #priceDetails {
+    display: none;
+    margin-top: 20px;
+  }
+  
+  #minimalPrice,
+  #totalPrice {
+    margin-top: -20px;
+    font-size: 13px; /* Menyesuaikan ukuran font */
+  }
+  
+  #termsModal,
+  #paymentModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+  }
+  
+  #termsContent,
+  #paymentContent {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+  }
+
+  #termsContent {
+    max-height: 400px; /* Set a maximum height for the terms content */
+    overflow-y: auto; /* Enable vertical scroll if content exceeds the max height */
+  }
+
+  .syarat-container {
+    display: flex;
+    align-items: center;
+}
+
+button[type="button1"] {
+    margin-top: 10px; /* Sesuaikan dengan jumlah margin yang diinginkan */
+}
+
+button[type="button2"] {
+  margin-top: 10px; /* Sesuaikan dengan jumlah margin yang diinginkan */
+}
+

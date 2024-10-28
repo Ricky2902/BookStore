@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student</title>
+    <link rel="shortcut icon" href="../asset-project/360_F_484028136_CpMbMnwuiesqqxYw7DIRlR8uYlMfot1U-removebg-preview.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Sofia">
+    <link rel="stylesheet" href="studentstyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <!-- Nav -->
+        <div class="nav container">
+            <a href="index.html"><img src="../../images/logonguaa.png"></a>
+        </div>
+    </header>
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <section id="page1">
+            <div class="input-container">
+                <h2>KARTU ANGGOTA</h2>
+
+                <div>
+                    <label for="nim">Username :</label>
+                    <input type="text" id="nim" ng-model="mahasiswa.nim">
+                </div>
+
+                <div>
+                    <label for="nama">Nama Lengkap:</label>
+                    <input type="text" id="nama" ng-model="mahasiswa.nama">
+                </div>
+
+                <div>
+                    <label for="tempatLahir">Tempat Tanggal Lahir:</label>
+                    <input type="text" id="tempatLahir" ng-model="mahasiswa.tempatLahir">
+                </div>
+
+                <div>
+                    <label for="jeniskelamin">Jenis Kelamin :</label>
+                    <select id="jeniskelamin" ng-model="mahasiswa.jeniskelamin">
+                        <option value="Laki - Laki">Laki - Laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="citaCita">Alamat Tinggal :</label>
+                    <input type="text" id="citaCita" ng-model="mahasiswa.citaCita">
+                </div>
+
+                <div>
+                    <label for="bahasaPemrograman">No Handphone:</label>
+                    <input type="text" id="bahasaPemrograman" ng-model="mahasiswa.bahasaPemrograman">
+                </div>
+
+                <div>
+                    <label for="foto">Foto:</label>
+                    <input type="file" id="foto" accept="image/*" ng-model="mahasiswa.foto" onchange="previewImage()">
+                </div>
+                <button id="scrollToSection2" ng-click="scrollToSection('page2')">OK</button>
+            </div>
+        </section>
+
+        <section id="page2">
+            <div class="main-container">
+                <div class="ktp-card">
+                    <h2>KARTU ANGGOTA</h2>
+
+                    <div class="ktp-data">
+                        <strong>Username    :</strong> <span>{{mahasiswa.nim}}</span>
+                    </div>
+                    <div class="ktp-data">
+                        <strong>Nama        :</strong> <span>{{mahasiswa.nama}}</span>
+                    </div>
+
+                    <div class="ktp-data">
+                        <strong>TTL         :</strong> <span>{{mahasiswa.tempatLahir}}</span>
+                    </div>
+
+                    <div class="ktp-data">
+                        <strong>Gender :</strong> <span>{{mahasiswa.jeniskelamin}}</span>
+                    </div>
+                    
+
+                    <div class="ktp-data">
+                        <strong>Alamat : </strong> <span>{{mahasiswa.citaCita}}</span>
+                    </div>
+
+                    <div class="ktp-data">
+                        <strong>No Hp :</strong> <span>{{mahasiswa.bahasaPemrograman}}</span>
+                    </div>
+
+                    <div class="ktp-data flex-container">
+                        <strong></strong>
+                        <div id="preview-container">
+                            <img id="preview" ng-src="{{mahasiswa.foto}}" alt="">
+                        </div>
+                    </div>
+                    <button id="downloadBtn" onclick="redirectToPage()">Continue</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope, $location, $anchorScroll) {
+            $scope.mahasiswa = {
+                nim: "",
+                nama: "",
+                tempatLahir: "",
+                hobby: "",
+                citaCita: "",
+                bahasaPemrograman: "",
+                foto: ""
+            };
+
+            $scope.scrollToSection = function (sectionId) {
+                // set the location.hash to the id of the element you wish to scroll to.
+                $location.hash(sectionId);
+
+                // call $anchorScroll()
+                $anchorScroll();
+            };
+        });
+
+        function previewImage() {
+            var preview = document.getElementById('preview');
+            var fileInput = document.getElementById('foto');
+            var file = fileInput.files[0];
+            var reader = new FileReader();
+
+            reader.onloadend = function () {
+                preview.src = reader.result;
+            };
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "";
+            }
+        }
+
+        function redirectToPage() {
+        // Ganti 'halaman-lain.html' dengan nama file HTML tujuan Anda
+        window.location.href = '../../shop1.html';
+        }
+    </script>
+</body>
+
+</html>
